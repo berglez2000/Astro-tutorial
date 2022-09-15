@@ -1,0 +1,15 @@
+---
+import { ProductInterface } from "../interfaces/Product";
+
+export interface Props {
+  product: ProductInterface;
+}
+
+const { product } = Astro.props as Props;
+---
+
+<div class="product card">
+  <h3>{product.title}</h3>
+  <p set:html={product.description}></p>
+  <a href={`${product.slug}`} class="btn">Read more</a>
+</div>
